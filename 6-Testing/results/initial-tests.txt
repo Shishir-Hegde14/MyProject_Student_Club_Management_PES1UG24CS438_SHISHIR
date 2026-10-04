@@ -1,0 +1,34 @@
+................F...                                                     [100%]
+================================== FAILURES ===================================
+____________________ test_TC17_malformed_non_ascii_ticket _____________________
+
+p = <services.Portal object at 0x0000023B0469C4D0>
+
+    def test_TC17_malformed_non_ascii_ticket(p):
+        e = approved(p)
+        with pytest.raises(PortalError):
+>           p.checkin(6,e,'fake:1:5:'+'�'*64)
+
+6-Testing\test_portal.py:241: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = <services.Portal object at 0x0000023B0469C4D0>, actor_id = 6
+event_id = 1
+token = 'fake:1:5:����������������������������������������������������������������'
+
+    def checkin(self, actor_id, event_id, token):
+        if not isinstance(token, str) or len(token) > 200:
+            raise PortalError('Invalid ticket.')
+        parts = token.strip().split(':')
+        if len(parts) != 4:
+            raise PortalError('Invalid ticket.')
+        payload, signature = ':'.join(parts[:3]), parts[3]
+        expected = hmac.new(self.secret, payload.encode(), hashlib.sha256).hexdigest()
+>       if not hmac.compare_digest(signature, expected):
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       TypeError: comparing strings with non-ASCII characters is not supported
+
+5-Code\services.py:186: TypeError
+=========================== short test summary info ===========================
+FAILED 6-Testing/test_portal.py::test_TC17_malformed_non_ascii_ticket - TypeE...
+1 failed, 19 passed in 6.13s

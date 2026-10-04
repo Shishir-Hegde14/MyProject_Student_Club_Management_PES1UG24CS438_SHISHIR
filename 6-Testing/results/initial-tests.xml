@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="0" failures="1" skipped="0" tests="20" time="5.956" timestamp="2026-10-04T23:34:01.632087+05:30" hostname="LAPTOP-HFTH2200"><testcase classname="6-Testing.test_portal" name="test_TC01_required_fields_and_money" time="0.158" /><testcase classname="6-Testing.test_portal" name="test_TC02_proposal_and_budget_items" time="0.140" /><testcase classname="6-Testing.test_portal" name="test_TC03_approval_order_and_signoffs" time="0.257" /><testcase classname="6-Testing.test_portal" name="test_TC04_reject_reason_and_release" time="0.207" /><testcase classname="6-Testing.test_portal" name="test_TC05_budget_limit_and_revision" time="0.253" /><testcase classname="6-Testing.test_portal" name="test_TC06_registration_requires_approval" time="0.133" /><testcase classname="6-Testing.test_portal" name="test_TC07_unique_tickets_and_repeat_registration" time="0.215" /><testcase classname="6-Testing.test_portal" name="test_TC08_capacity" time="0.192" /><testcase classname="6-Testing.test_portal" name="test_TC09_single_use" time="0.255" /><testcase classname="6-Testing.test_portal" name="test_TC10_tampering_wrong_event_and_expiry" time="0.359" /><testcase classname="6-Testing.test_portal" name="test_TC11_permissions_and_ownership" time="0.247" /><testcase classname="6-Testing.test_portal" name="test_TC12_concurrent_scan_accepts_once" time="0.271" /><testcase classname="6-Testing.test_portal" name="test_TC13_concurrent_budget_requests" time="0.146" /><testcase classname="6-Testing.test_portal" name="test_TC14_live_status_api" time="0.171" /><testcase classname="6-Testing.test_portal" name="test_TC15_login_csrf_logout_and_access" time="0.212" /><testcase classname="6-Testing.test_portal" name="test_TC16_web_end_to_end_and_qr" time="0.488" /><testcase classname="6-Testing.test_portal" name="test_TC17_malformed_non_ascii_ticket" time="0.146"><failure message="TypeError: comparing strings with non-ASCII characters is not supported">p = &lt;services.Portal object at 0x0000023B0469C4D0&gt;
+
+    def test_TC17_malformed_non_ascii_ticket(p):
+        e = approved(p)
+        with pytest.raises(PortalError):
+&gt;           p.checkin(6,e,'fake:1:5:'+'é'*64)
+
+6-Testing\test_portal.py:241: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = &lt;services.Portal object at 0x0000023B0469C4D0&gt;, actor_id = 6
+event_id = 1
+token = 'fake:1:5:éééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééé'
+
+    def checkin(self, actor_id, event_id, token):
+        if not isinstance(token, str) or len(token) &gt; 200:
+            raise PortalError('Invalid ticket.')
+        parts = token.strip().split(':')
+        if len(parts) != 4:
+            raise PortalError('Invalid ticket.')
+        payload, signature = ':'.join(parts[:3]), parts[3]
+        expected = hmac.new(self.secret, payload.encode(), hashlib.sha256).hexdigest()
+&gt;       if not hmac.compare_digest(signature, expected):
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       TypeError: comparing strings with non-ASCII characters is not supported
+
+5-Code\services.py:186: TypeError</failure></testcase><testcase classname="6-Testing.test_portal" name="test_TC18_concurrent_last_seat" time="0.198" /><testcase classname="6-Testing.test_portal" name="test_TC19_edit_draft_and_lock_after_submission" time="0.249" /><testcase classname="6-Testing.test_portal" name="test_TC20_escape_html_and_reject_sql_login" time="0.174" /></testsuite></testsuites>

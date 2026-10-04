@@ -1,0 +1,13 @@
+* { box-sizing: border-box; }
+body { max-width: 1000px; margin: 25px auto; padding: 0 20px; color: #111; background: #fff; font: 16px/1.5 Arial, sans-serif; }
+header { border-bottom: 1px solid #444; padding-bottom: 14px; }
+h1 { font-size: 25px; } h2 { font-size: 22px; } h3 { font-size: 18px; }
+a { color: #111; } nav { display: flex; flex-wrap: wrap; gap: 16px; align-items: center; } nav form { margin: 0; }
+form { margin: 20px 0; max-width: 600px; } label { display: block; margin: 12px 0; }
+input, textarea, select { width: 100%; padding: 9px; border: 1px solid #555; font: inherit; background: #fff; color: #111; }
+button { padding: 8px 14px; border: 1px solid #222; background: #eee; color: #111; font: inherit; cursor: pointer; }
+button:hover { background: #ddd; } :focus-visible { outline: 2px solid #111; outline-offset: 3px; }
+table { border-collapse: collapse; width: 100%; margin: 18px 0; } th, td { border: 1px solid #777; padding: 10px; text-align: left; }
+th { background: #eee; } .table-wrap { overflow-x: auto; } .notice { border: 1px solid #444; padding: 12px; }
+.qr { width: 260px; height: 260px; max-width: 100%; } footer { border-top: 1px solid #777; margin-top: 32px; padding: 15px 0; font-size: 14px; }
+@media (max-width: 500px) { body { padding: 0 12px; margin-top: 12px; } h1 { font-size: 22px; } th, td { padding: 6px; } }

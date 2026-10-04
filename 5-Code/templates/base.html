@@ -1,0 +1,6 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Student Club Portal</title><link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}"></head>
+<body><header><h1>Student Club Event and Budget Portal</h1><p>Shishir Hegde | PES1UG24CS438 | Section 5H</p>
+{% if g.user %}<nav><a href="{{ url_for('dashboard') }}">Events</a> {% if g.user.role == 'lead' %}<a href="{{ url_for('new_event') }}">New proposal</a>{% endif %} {% if g.user.role == 'checkin' %}<a href="{{ url_for('checkin') }}">Ticket check-in</a>{% endif %}<span>{{ g.user.username }} ({{ g.user.role }})</span><form method="post" action="{{ url_for('logout') }}"><input type="hidden" name="csrf" value="{{ session.csrf }}"><button>Log out</button></form></nav>{% endif %}</header>
+<main>{% for message in get_flashed_messages() %}<p class="notice" role="status">{{ message }}</p>{% endfor %}{% block content %}{% endblock %}</main><footer>Software Engineering individual project | Local prototype</footer></body></html>
