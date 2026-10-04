@@ -1,9 +1,13 @@
 # Student Club Event Ticketing and Budget Portal
 
-**Name:** Shishir Hegde  
-**SRN:** PES1UG24CS438  
-**Section:** 5H  
-**Course:** Software Engineering  
+**Name:** Shishir Hegde
+
+**SRN:** PES1UG24CS438
+
+**Section:** 5H
+
+**Course:** Software Engineering
+
 **Individual project:** Problem Statement 10
 
 This project brings club event proposals, budget approvals and entry tickets into one portal. A Club Lead submits an event budget, the Faculty Coordinator, Finance Officer and Dean review it in order, and students register after approval. Check-in staff validate each QR ticket once.
