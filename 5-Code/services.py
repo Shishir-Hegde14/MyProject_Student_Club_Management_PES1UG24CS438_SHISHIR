@@ -182,6 +182,8 @@ class Portal:
         if len(parts) != 4:
             raise PortalError('Invalid ticket.')
         payload, signature = ':'.join(parts[:3]), parts[3]
+        if len(signature) != 64 or any(c not in '0123456789abcdef' for c in signature):
+            raise PortalError('Invalid ticket signature.')
         expected = hmac.new(self.secret, payload.encode(), hashlib.sha256).hexdigest()
         if not hmac.compare_digest(signature, expected):
             raise PortalError('Invalid ticket signature.')

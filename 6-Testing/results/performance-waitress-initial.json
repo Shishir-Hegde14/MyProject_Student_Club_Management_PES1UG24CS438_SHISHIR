@@ -1,0 +1,38 @@
+{
+  "run_at_utc": "2026-10-04T18:16:55.599698+00:00",
+  "python": "3.12.14",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "logical_cpus": 8,
+  "server": "waitress",
+  "method": "Loopback HTTP against waitress; 500 distinct pre-authenticated users released together. Server HTML response time, not browser paint or WAN latency. QR check-in POST includes CSRF, authorization and database update.",
+  "page_500_concurrent": {
+    "requests": 500,
+    "successful": 419,
+    "median_ms": 24788.57,
+    "p95_ms": 27031.8,
+    "max_ms": 27460.0,
+    "target_ms": 2000,
+    "within_target": 0,
+    "target_met": false
+  },
+  "checkin_sequential": {
+    "requests": 50,
+    "successful": 50,
+    "median_ms": 85.13,
+    "p95_ms": 123.64,
+    "max_ms": 228.47,
+    "target_ms": 100,
+    "within_target": 35,
+    "target_met": false
+  },
+  "checkin_20_workers": {
+    "requests": 50,
+    "successful": 50,
+    "median_ms": 435.83,
+    "p95_ms": 681.81,
+    "max_ms": 853.79,
+    "target_ms": 100,
+    "within_target": 1,
+    "target_met": false
+  }
+}

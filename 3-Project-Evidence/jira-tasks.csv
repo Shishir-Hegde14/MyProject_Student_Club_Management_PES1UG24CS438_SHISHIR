@@ -1,0 +1,16 @@
+Issue Type,Summary,Description,Priority,Labels
+Task,1.1 Read the brief and keep the original files,Shishir Hegde | SRN PES1UG24CS438 | Section 5H. Dependency: None. Output: Original Lab 1 files and references. Repository status: Done.,Medium,student-club-portal
+Task,1.2 Revise FR and NFR acceptance criteria,Shishir Hegde | SRN PES1UG24CS438 | Section 5H. Dependency: 1.1. Output: Requirements document and CSV. Repository status: Done.,Medium,student-club-portal
+Task,1.3 Complete the RTM and use-case model,"Shishir Hegde | SRN PES1UG24CS438 | Section 5H. Dependency: 1.2. Output: RTM, diagram and core flow. Repository status: Done.",Medium,student-club-portal
+Task,2.1 Compare architectures and choose one,Shishir Hegde | SRN PES1UG24CS438 | Section 5H. Dependency: 1.2. Output: Architecture analysis and justification. Repository status: Done.,Medium,student-club-portal
+Task,2.2 Draw components and define interfaces,Shishir Hegde | SRN PES1UG24CS438 | Section 5H. Dependency: 2.1. Output: Component diagram and code mapping. Repository status: Done.,Medium,student-club-portal
+Task,3.1 Prepare the SRS,"Shishir Hegde | SRN PES1UG24CS438 | Section 5H. Dependency: 1.3, 2.2. Output: SRS document. Repository status: Done.",Medium,student-club-portal
+Task,3.2 Organise GitHub and capture evidence,Shishir Hegde | SRN PES1UG24CS438 | Section 5H. Dependency: 1.1. Output: Numbered folders and real screenshots. Repository status: Done.,Medium,student-club-portal
+Task,3.3 Create the Jira project and task records,Shishir Hegde | SRN PES1UG24CS438 | Section 5H. Dependency: 3.1. Output: Jira project and actual screenshot. Repository status: Pending access.,Medium,student-club-portal
+Task,"4.1 Implement login, proposals and approvals",Shishir Hegde | SRN PES1UG24CS438 | Section 5H. Dependency: 3.1. Output: Working prototype. Repository status: Done.,Medium,student-club-portal
+Task,"4.2 Implement tickets, check-in and status",Shishir Hegde | SRN PES1UG24CS438 | Section 5H. Dependency: 4.1. Output: Working prototype. Repository status: Done.,Medium,student-club-portal
+Task,4.3 Collect GitHub Copilot evidence,Shishir Hegde | SRN PES1UG24CS438 | Section 5H. Dependency: 4.1. Output: Actual Copilot session or code link. Repository status: Pending tool access.,Medium,student-club-portal
+Task,"5.1 Test the portal, fix a defect and retest","Shishir Hegde | SRN PES1UG24CS438 | Section 5H. Dependency: 4.2. Output: 20 tests, failure log, patch and final log. Repository status: Done.",Medium,student-club-portal
+Task,5.2 Measure load and review mobile layout,Shishir Hegde | SRN PES1UG24CS438 | Section 5H. Dependency: 5.1. Output: Benchmark results and browser evidence. Repository status: Partly verified.,Medium,student-club-portal
+Task,5.3 Complete the supplied game-testing exercise,"Shishir Hegde | SRN PES1UG24CS438 | Section 5H. Dependency: Lecturer provides repository. Output: Four supplied cases, patch and retest link. Repository status: Pending input.",Medium,student-club-portal
+Task,6.1 Check links and submit repository,Shishir Hegde | SRN PES1UG24CS438 | Section 5H. Dependency: All available tasks. Output: Organised repository and status list. Repository status: Done for available work.,Medium,student-club-portal

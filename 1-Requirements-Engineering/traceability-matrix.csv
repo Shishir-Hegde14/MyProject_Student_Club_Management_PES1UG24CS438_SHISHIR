@@ -1,0 +1,8 @@
+Requirement,Use case,Component,Implementation,Verification,Status
+FR-001,UC02 Review budget,Event and Budget,Portal.submit; Portal.review; approvals table,"TC03, TC04, TC11",Passed
+FR-002,UC01 Request budget; create or edit proposal,Event and Budget,Portal.create_event; Portal.submit; budget_items,"TC01, TC02, TC05, TC13, TC19",Passed
+FR-003,UC03 Register for event; generate QR ticket,Ticket Service,Portal.register; Portal.token; ticket_svg,"TC06, TC07, TC08, TC16, TC18",Passed
+FR-004,UC04 Scan and validate ticket,Check-in Service,Portal.checkin; conditional ticket update,"TC09, TC10, TC11, TC12, TC17",Passed; hardware scan not tested
+FR-005,UC05 Track event status,Dashboard Service,Portal.dashboard; /api/status; dashboard.js,"TC11, TC14; browser walkthrough",API passed; polling interval 3 seconds
+NFR-001,UC04 Scan and validate ticket,Authentication; Check-in; SQLite,Role checks; HMAC; atomic update,"TC09-TC12, TC15, TC17; benchmark.py",Security cases passed; see measured performance limits
+NFR-002,All browser use cases,Web UI; application; SQLite,Responsive CSS; status polling; HTTP routes,500-user benchmark; mobile viewport review,Partial verification; real-device and browser-load acceptance pending

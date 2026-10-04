@@ -43,7 +43,7 @@ def create_app(config=None):
         session.setdefault('csrf', secrets.token_hex(24))
         if request.method == 'POST':
             supplied = request.form.get('csrf', '')
-            if not supplied or not secrets.compare_digest(supplied, session['csrf']):
+            if not supplied or not secrets.compare_digest(supplied.encode(), session['csrf'].encode()):
                 abort(400, 'The form expired. Refresh the page and try again.')
 
     @app.after_request

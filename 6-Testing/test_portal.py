@@ -197,6 +197,7 @@ def test_TC15_login_csrf_logout_and_access(app):
     c = app.test_client()
     assert c.get('/').status_code == 302
     assert c.post('/login',data={'username':'lead','password':'test-pass'}).status_code == 400
+    assert c.post('/login',data={'csrf':'\u00e9','username':'lead','password':'test-pass'}).status_code == 400
     c.get('/login')
     with c.session_transaction() as s:
         csrf = s['csrf']
